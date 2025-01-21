@@ -17,7 +17,7 @@ Welcome to **Git Bounty 🏴‍☠️**, a fun and creative tool that transforms
 Simply enter a GitHub username to generate a unique poster based on contributions, favorite programming languages, and more!
 """)
 
-"[![Open in GitHub](https://github.com/codespaces/badge.svg)](https://github.com/Raghul-M/Bookvision/)"
+"[![Open in GitHub](https://github.com/codespaces/badge.svg)](https://github.com/Raghul-M/Git-Bounty/)"
 
 def github():
     badge(type="github", name="streamlit/streamlit")
