@@ -122,7 +122,7 @@ def image_generation(username, total_contributions, most_used_language):
         file_path = f"{username}_bounty_poster.png"
         image.save(file_path)
         st.success("Done")
-        st.image(file_path)
+        st.image(image)
         
 
 def data_visual(username, avatar_url, followers, location, total_contributions, most_used_language):
