@@ -119,10 +119,9 @@ def image_generation(username, total_contributions, most_used_language):
             f"spirit, depicted in a bold, exaggerated anime art style with vibrant colors and dynamic posing."
         )
         image = client.text_to_image(description)
-        file_path = f"{username}_bounty_poster.png"
-        image.save(file_path)
+        st.image(image, caption=f"{username}'s Bounty Poster", use_column_width=True)
         st.success("Done")
-        st.image(image)
+
         
 
 def data_visual(username, avatar_url, followers, location, total_contributions, most_used_language):
