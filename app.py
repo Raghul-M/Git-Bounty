@@ -149,3 +149,9 @@ if username and button:
                 avatar_url=avatar_url, location=location)
     image_generation(username=username, total_contributions=total_contributions, 
                      most_used_language=most_used_language)
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8501))
+    import streamlit.web.bootstrap
+    streamlit.web.bootstrap.run("app.py", "", [], {})
