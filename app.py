@@ -4,6 +4,7 @@ import streamlit as st
 from dotenv import load_dotenv  # type: ignore
 import os
 from huggingface_hub import InferenceClient
+from io import BytesIO
 
 load_dotenv()
 gh_token = st.secrets.GH_TOKEN
@@ -117,17 +118,13 @@ def image_generation(username, total_contributions, most_used_language):
             f"in bold, classic bounty poster font, with a weathered parchment texture for the background. Add small logos of {most_used_language} "
             f"near the bounty text, subtly highlighting their coding expertise. The character should exude energy, confidence, and an adventurous "
             f"spirit, depicted in a bold, exaggerated anime art style with vibrant colors and dynamic posing."
-        )
-        file_path = f"{username}_bounty_poster.png"
+        )       
+        buffer = BytesIO()
         image = client.text_to_image(description)
-        image.save(file_path)
+        image.save(buffer, format="PNG")
+        buffer.seek(0)
         
-        # Check if the file exists
-        import os
-        if os.path.exists(file_path):
-            st.image(file_path, caption=f"{username}'s Bounty Poster", use_column_width=True)
-        else:
-            st.error("Image file was not saved correctly.")
+        st.image(buffer, caption=f"{username}'s Bounty Poster", use_container_width=True)
 
 def data_visual(username, avatar_url, followers, location, total_contributions, most_used_language):
     st.markdown("---")
