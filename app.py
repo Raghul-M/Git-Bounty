@@ -7,8 +7,8 @@ from huggingface_hub import InferenceClient
 from io import BytesIO
 
 load_dotenv()
-gh_token = st.secrets.GH_TOKEN
-hf_token = st.secrets.HF_TOKEN
+gh_token = os.getenv("GH_TOKEN")
+hf_token = os.getenv("HF_TOKEN")
 st.set_page_config(page_title="Git Bounty", page_icon="💰")
 st.title("Git Bounty 💰")
 
