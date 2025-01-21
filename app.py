@@ -121,7 +121,7 @@ def image_generation(username, total_contributions, most_used_language):
         file_path = f"{username}_bounty_poster.png"
         image = client.text_to_image(description)
         image.save(file_path)
-        st.image(file_path, caption=f"{username}'s Bounty Poster", use_column_width=True)
+        st.image(file_path, caption=f"{username}'s Bounty Poster", use_container_width=True)
         st.success("Done")   
 
 def data_visual(username, avatar_url, followers, location, total_contributions, most_used_language):
