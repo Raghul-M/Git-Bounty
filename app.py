@@ -119,11 +119,20 @@ def image_generation(username, total_contributions, most_used_language):
             f"near the bounty text, subtly highlighting their coding expertise. The character should exude energy, confidence, and an adventurous "
             f"spirit, depicted in a bold, exaggerated anime art style with vibrant colors and dynamic posing."
         )       
-        image = client.text_to_image(description)   
+        image = client.text_to_image(description)
         file_path = f"{username}_bounty_poster.png"
         image.save(file_path)
+        img_byte_arr = io.BytesIO()
+        image.save(img_byte_arr, format="PNG")
+        img_byte_arr = img_byte_arr.getvalue()
         st.success("Done")
-        st.image(image, caption=f"{username}'s Bounty Poster", use_container_width=True)
+        st.image(file_path)
+        st.download_button(label="📥 Download Bounty Poster",
+        data=img_byte_arr,
+        file_name=file_path,
+        mime="image/png"                  
+        )
+
 
 def data_visual(username, avatar_url, followers, location, total_contributions, most_used_language):
     st.markdown("---")
