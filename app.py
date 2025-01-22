@@ -4,7 +4,7 @@ import streamlit as st
 from dotenv import load_dotenv  # type: ignore
 import os
 from huggingface_hub import InferenceClient
-from io import BytesIO
+import io
 
 load_dotenv()
 gh_token = os.getenv("GH_TOKEN")
