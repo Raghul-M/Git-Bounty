@@ -1,14 +1,12 @@
 import time
 import requests
 import streamlit as st
-from dotenv import load_dotenv  # type: ignore
 import os
 from huggingface_hub import InferenceClient
 import io
 
-load_dotenv()
-gh_token = os.getenv("GH_TOKEN")
-hf_token = os.getenv("HF_TOKEN")
+gh_token = st.secrets["GH_TOKEN"]
+hf_token = st.secrets["HF_TOKEN"]
 st.set_page_config(page_title="Git Bounty", page_icon="💰")
 st.title("Git Bounty 💰")
 
