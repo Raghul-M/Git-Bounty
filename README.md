@@ -1,6 +1,6 @@
 # Git Bounty 💰
 
-**Git Bounty** generates personalized anime-style pirate bounty posters based on a user's GitHub activity. Simply input a GitHub username, and the app pulls relevant data like contributions, favorite programming languages, and more to create a unique bounty poster.
+**Git Bounty** generates a personalized anime-style pirate bounty posters based on a user's GitHub activity. Simply input a GitHub username, and the app pulls relevant data like contributions, favorite programming languages, and more to create a unique bounty poster.
 
 ![image](https://github.com/user-attachments/assets/f20459f6-3a9e-465c-93c4-051e29d09dfe)
 
